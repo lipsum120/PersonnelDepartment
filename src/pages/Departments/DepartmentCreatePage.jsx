@@ -26,7 +26,7 @@ const DepartmentCreatePage = () => {
   const { register, formState: { errors } ,handleSubmit } = useForm();
 
   return (
-    <main className='p-5 text-zinc-900'>
+    <main className='p-2 md:p-5 text-myGray'>
       <FormCard headerName='Create Department '>
         <MyForm handleSubmit={handleSubmit} onSubmit={onSubmit}>
           <InputsSection>

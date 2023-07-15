@@ -9,7 +9,7 @@ const Header = ({ setIsOpen, isOpen }) => {
 	return (
     <header className="flex flex-col lg:flex-row lg:items-center justify-between py-4 md:py-6 px-6 lg:px-10 border-b bg-white space-y-3 lg:space-y-0 lg:space-x-5">
       <section className='flex items-center space-x-4 lg:space-x-0'>
-        <button className='flex-none lg:hidden w-8 h-8 flex items-center justify-center bg-zinc-800 text-white rounded-lg' onClick={() => setIsOpen(!isOpen)}>
+        <button className='flex-none lg:hidden w-8 h-8 flex items-center justify-center bg-myGray text-white rounded-lg' onClick={() => setIsOpen(!isOpen)}>
           <FontAwesomeIcon icon={faAngleRight} />
         </button>
         <article>

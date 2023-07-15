@@ -60,7 +60,7 @@ const DepartmentsPage = () => {
   ];
   
   return (
-    <main className='p-5 text-zinc-900'>
+    <main className='p-2 md:p-5 text-myGray'>
       <TableCard name='Departments'>
         <CardHeader name={`Departments`}>
           <CardSearchInput />
@@ -85,8 +85,8 @@ const DepartmentsPage = () => {
                   <Tb name={d.stuff_count} />
                   <TbList id={d.id} list={d.branches} />
                   <TbCRUD>
-                    <TableButton name='edit' onClick={() => navigate(`${d.id}/edit/`)} />
-                    <TableButton name='delete' />
+                    <TableButton color="bg-[#FFC234] text-myGray" name='edit' onClick={() => navigate(`${d.id}/edit/`)} />
+                    <TableButton color="bg-red-500 text-white" name='delete' />
                   </TbCRUD>
                 </tr>
               )}

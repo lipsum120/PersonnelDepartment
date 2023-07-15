@@ -1,18 +1,28 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { LayoutGroup, motion } from 'framer-motion';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
-const MyLi = ({ to, icon, name }) => {
+const MyLi = ({ id, to, name, selected, onClick }) => {
   return (
-    <li>
-      <NavLink
-        to={ to }
-        className={({ isActive }) => `${isActive ? 'text-white' : 'hover:text-white'} flex items-center px-6 py-4 hover:bg-myLightGray rounded-2xl hover:shadow-xl cursor-pointer space-x-4`}
-      >
-        <FontAwesomeIcon icon={ icon } />
-        <p>{ name }</p>
-      </NavLink>
-    </li>
+    <Link to={ to }>
+      <li className=' relative flex items-center cursor-pointer' onClick={onClick}>
+        {selected === to ? 
+          <motion.div 
+            transition={{duration: 0.2}} 
+            layoutId='block' 
+            className=' w-2 h-10 bg-[#FFC234] rounded-r-full'
+          ></motion.div> : null 
+        }
+          <motion.p
+            transition={{duration: 0.2}} 
+            initial={{paddingLeft: '1.2rem'}}
+            animate={selected == to ? {paddingLeft: '1.75rem'} : {}} 
+            className='pr-20 py-5 font-bold text-white'
+          >
+            { name }
+          </motion.p>
+      </li>
+    </Link>
   );
 }
 

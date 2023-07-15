@@ -29,25 +29,22 @@ const BranchPage = () => {
   ];
 
   return (
-    <main className='p-5 text-zinc-900 space-y-5'>
-      <header>
-        
-      </header>
-      <h1 className='text-3xl font-bold'>Ashgabat Branch</h1>
-      <section className='grid grid-cols-1 md:grid-cols-2 gap-5'>
-        <div className='bg-white flex items-center justify-between h-20 px-8 rounded-lg'>
+    <main className='p-2 md:p-5 text-myGray space-y-3'>
+      <h1 className='text-3xl font-bold p-1'>Ashgabat Branch</h1>
+      <section className='grid grid-cols-1 md:grid-cols-2 gap-3'>
+        <div className='bg-white flex items-center justify-between h-20 px-8 rounded-lg font-bold text-2xl '>
           <article className='flex items-center space-x-5'>
-            <FontAwesomeIcon icon={faMars} size='xl' />
-            <h3 className='text-2xl font-black'>Males</h3>
+            <FontAwesomeIcon icon={faMars} className='text-xl text-blue-500' />
+            <h3 className=''>Males</h3>
           </article>
-          <p className='text-2xl font-black'>123</p>
+          <p className=''>123</p>
         </div>
-        <div className='bg-white flex items-center justify-between h-20 px-8 rounded-lg'>
+        <div className='bg-white flex items-center justify-between h-20 px-8 rounded-lg font-bold text-2xl '>
           <article className='flex items-center space-x-5'>
-            <FontAwesomeIcon icon={faVenus} size='xl' />
-            <h3 className='text-2xl font-black'>Females</h3>
+            <FontAwesomeIcon icon={faVenus}className='text-xl text-pink-500' />
+            <h3 className=''>Females</h3>
           </article>
-          <p className='text-2xl font-black'>123</p>
+          <p className=''>123</p>
         </div>
       </section>
       <TableCard>
@@ -68,14 +65,14 @@ const BranchPage = () => {
                   <Tb name={"#" + d.id} />
                   <Tb name={d.name} />
                   <Tb name={d.stuff_count}>
-                    <p className='font-light text-sm space-x-2'>
-                      ( <span className='text-blue-500'>man: {d.boys}</span>
-                      <span className='text-pink-500'>woman: {d.girls}</span> )
+                    <p className='ml-2 font-light text-sm space-x-2'>
+                      <span className='text-blue-500'>( men: {d.boys}</span>
+                      <span className='text-pink-500'>women: {d.girls})</span>
                     </p>
                   </Tb> 
                   <TbCRUD>
-                    <TableButton name='edit' onClick={() => navigate(`/departments/${d.id}/edit/`)} />
-                    <TableButton name='delete' />
+                    <TableButton color="bg-[#FFC234] text-myGray" name='edit' onClick={() => navigate(`/departments/${d.id}/edit/`)} />
+                    <TableButton color="bg-red-500 text-white" name='delete' />
                   </TbCRUD>
                 </tr>
               )}

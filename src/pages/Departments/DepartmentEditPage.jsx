@@ -29,20 +29,22 @@ const DepartmentEditPage = () => {
   const { register, formState: { errors } ,handleSubmit } = useForm();
 
   return (
-    <FormCard headerName={`Edit ${params.id} Department`}>
-      <MyForm handleSubmit={handleSubmit} onSubmit={onSubmit}>
-        <InputsSection>
-          <FormInput 
-            register={register} 
-            errors={errors} 
-            labelName={'Name'} 
-            inputName={'departmentName'} 
-            validation={{ required: {value: true, message: "Name is required"} }} 
-          />
-        </InputsSection>
-        <FormSelector name={'Branches'} items={branches} selected={selectedBranches} setSelected={setSelectedBranches} />
-      </MyForm>
-    </FormCard>
+    <main className='p-2 md:p-5 text-myGray'>
+      <FormCard headerName={`Edit ${params.id} Department`}>
+        <MyForm handleSubmit={handleSubmit} onSubmit={onSubmit}>
+          <InputsSection>
+            <FormInput 
+              register={register} 
+              errors={errors} 
+              labelName={'Name'} 
+              inputName={'departmentName'} 
+              validation={{ required: {value: true, message: "Name is required"} }} 
+            />
+          </InputsSection>
+          <FormSelector name={'Branches'} items={branches} selected={selectedBranches} setSelected={setSelectedBranches} />
+        </MyForm>
+      </FormCard>
+    </main>
   );
 }
 

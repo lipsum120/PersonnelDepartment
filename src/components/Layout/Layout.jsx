@@ -7,15 +7,10 @@ const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='flex'>
+    <div className='flex font-raleway'>
       <Sidebar isOpen={isOpen} />
-      {isOpen ?
-        <div 
-          className='block lg:hidden fixed top-0 h-screen w-screen bg-black opacity-50 z-40' 
-          onClick={() => setIsOpen(false)}
-        ></div> : ""
-      }
-      <div className={`w-full lg:ml-80`}>
+      {isOpen ? <div onClick={() => setIsOpen(false)} className='block lg:hidden absolute top-0 left-0 bg-black bg-opacity-50 w-screen h-screen z-40'></div> : <></>}
+      <div className={`${isOpen ? 'fixed' : ''} w-full lg:ml-80`}>
         <Header isOpen={isOpen} setIsOpen={setIsOpen} />
         <Outlet />
       </div>

@@ -23,7 +23,7 @@ const Pagination = () => {
 
   return (
     <section className='space-x-2 md:space-x-3'>
-      <button onClick={onCLickPreviousButton} className={`${pageNumber == 1 ? 'bg-zinc-300' : 'bg-zinc-800'} w-7 md:w-8 h-7 md:h-8 text-white rounded-lg`}>
+      <button onClick={onCLickPreviousButton} className={`${pageNumber == 1 ? 'bg-zinc-300' : 'bg-myGray'} w-7 md:w-8 h-7 md:h-8 text-white rounded-lg`}>
         <FontAwesomeIcon icon={faAngleLeft} />
       </button>
       {Array.from(Array(5), (e, i) => {
@@ -31,13 +31,13 @@ const Pagination = () => {
           return <button 
               key={i} 
               onClick={() => setActivePage(i + pageNumber)} 
-              className={`${activePage == i + pageNumber ? 'bg-zinc-800 text-white' : 'hover:bg-stone-200'} w-6 md:w-7 h-6 md:h-7 rounded-lg select-none`}
+              className={`${activePage == i + pageNumber ? 'bg-myGray text-white' : 'hover:bg-stone-200'} w-6 md:w-7 h-6 md:h-7 rounded-lg select-none`}
             >
               {i + pageNumber}
            </button>
         }
       })}
-      <button onClick={onCLickNextButton} className={`${5 + pageNumber <= pageCount ? 'bg-zinc-800' : 'bg-zinc-300'} w-7 md:w-8 h-7 md:h-8 text-white rounded-lg`}>
+      <button onClick={onCLickNextButton} className={`${5 + pageNumber <= pageCount ? 'bg-myGray' : 'bg-zinc-300'} w-7 md:w-8 h-7 md:h-8 text-white rounded-lg`}>
         <FontAwesomeIcon icon={faAngleRight} />
       </button>
     </section>
